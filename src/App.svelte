@@ -3,25 +3,40 @@
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
   import Header from './components/header/Header.svelte'
+const url = 'https://api.hgbrasil.com/weather?key=e4a99fdf&city_name=Ponta_Grossa';
 
-  import axios from 'axios';
+function fetchWeatherData(url) {
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then((response) => {
+        console.log(response)
+        if (!response.ok) {
+          const errorMessage = `A solicitação falhou com status ${response.status}`;
+          window.alert(errorMessage); // Use window.alert para exibir o erro
+          throw new Error(errorMessage);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        window.alert(`Ocorreu um erro na solicitação: ${error.message}`); // Use window.alert para exibir o erro
+        reject(error);
+      });
+  });
+}
 
-  const url = 'https://api.hgbrasil.com/weather?key=e4a99fdf&city_name=Ponta%20Grossa';
+fetchWeatherData(url)
+  .then((data) => {
+    // Agora você pode acessar os dados da resposta, por exemplo:
+    const temperatura = data.results.temp;
+    window.alert(`A temperatura em Ponta Grossa é ${temperatura}°C`); // Use window.alert para exibir o resultado
+  })
+  .catch((error) => {
+    console.error(`Ocorreu um erro na solicitação: ${error.message}`);
+  });
 
-  axios.get(url)
-    .then((response) => {
-      if (response.status === 200) {
-        const data = response.data;
-        // Agora você pode acessar os dados da resposta, por exemplo:
-        const temperatura = data.results.temp;
-        window.alert(`A temperatura em Ponta Grossa é ${temperatura}°C`);
-      } else {
-        window.alert(`A solicitação falhou com status ${response.status}`);
-      }
-    })
-    .catch((error) => {
-      window.alert(`Ocorreu um erro na solicitação: ${error.message}`);
-    });
 
   //e4a99fdf
 </script>
