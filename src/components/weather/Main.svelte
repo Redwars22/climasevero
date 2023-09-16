@@ -3,7 +3,7 @@
   import {API_KEY} from '../../api/auth.ts';
   import {IWeatherData} from "../../api/types.ts";
 
-  let data: WeatherData;
+  let data: IWeatherData;
 
   document.addEventListener("DOMContentLoaded", async function() {
       data = await getWeatherData("Ponta%20Grossa", API_KEY);
