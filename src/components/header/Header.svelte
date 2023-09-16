@@ -3,6 +3,8 @@
     <i class="bi bi-cloud-drizzle-fill"></i>
     <h1>CLIMASEVERO</h1>
   </div>
+  <input type="text" placeholder="Digite uma cidade..." id="search">
+  <button id="search-btn">Pesquisar</button>
 </header>
 
 <style>

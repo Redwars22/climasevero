@@ -7,10 +7,16 @@
   let loading;
 
   document.addEventListener("DOMContentLoaded", async function() {
-      loading = true;
-      data = await getWeatherData("Dubai", API_KEY);
-      loading = false;
+    loading = true;
+    data = await getWeatherData("Dubai", API_KEY);
+    loading = false;
   });
+
+  window.onload = () => document.getElementById("search-btn").addEventListener("click", async () => {
+    loading = true;
+    data = await getWeatherData("Dubai", API_KEY);
+    loading = false;
+  })
 </script>
 
 <div>
