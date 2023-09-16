@@ -1,5 +1,5 @@
 <script>
-  import {getWeatherData} from '../../api/getWeatherData.ts';
+  import getWeatherData from '../../api/getWeatherData.ts';
   import {API_KEY} from '../../api/auth.ts'
 
   document.addEventListener("DOMContentLoaded", async function() {
