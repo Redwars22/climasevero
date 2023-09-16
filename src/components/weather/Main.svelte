@@ -14,7 +14,8 @@
 
   window.onload = () => document.getElementById("search-btn").addEventListener("click", async () => {
     loading = true;
-    data = await getWeatherData("Dubai", API_KEY);
+    let query = document.getElementById("search").value;
+    data = await getWeatherData(query, API_KEY);
     loading = false;
   })
 </script>
