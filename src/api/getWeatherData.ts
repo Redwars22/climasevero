@@ -5,7 +5,5 @@ export default async function getWeatherData(query: string, API_KEY: string) {
 
   const res = await data.text();
 
-  window.alert('chamou-me');
-
   return JSON.parse(res);
 }

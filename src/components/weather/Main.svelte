@@ -1,12 +1,17 @@
-<script>
+<script lang="ts">
   import getWeatherData from '../../api/getWeatherData.ts';
-  import {API_KEY} from '../../api/auth.ts'
+  import {API_KEY} from '../../api/auth.ts';
+  import {IWeatherData} from "../../api/types.ts";
+
+  let data: WeatherData;
 
   document.addEventListener("DOMContentLoaded", async function() {
-      await getWeatherData("Ponta%20Grossa", API_KEY);
+      data = await getWeatherData("Ponta%20Grossa", API_KEY);
   });
 </script>
 
-<div></div>
+<div>
+  <h1>{data.name}</h1>
+</div>
 
 <style></style>
