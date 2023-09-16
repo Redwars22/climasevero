@@ -1,7 +1,7 @@
 <script lang="ts">
   import getWeatherData from '../../api/getWeatherData.ts';
   import {API_KEY} from '../../api/auth.ts';
-  import {IWeatherData} from "../../api/types.ts";
+  //import IWeatherData from "../../api/types.ts";
 
   let data;
 
