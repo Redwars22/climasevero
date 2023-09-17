@@ -26,8 +26,16 @@
 
   <div class="weather-card">
     <h2>{data?.main?.temp.toFixed(1)}ºC</h2>
-    <span style="color: #0d82d5">MIN: {data?.main?.temp_min.toFixed(1)}ºC</span>
-    <span style="color: #f74528">MAX: {data?.main?.temp_max.toFixed(1)}ºC</span>
+    <h5>{data?.weather[0]?.description}</h5>
+    <div><span style="color: #0d82d5">MIN: {data?.main?.temp_min.toFixed(1)}ºC</span>
+    <span style="color: #f74528">MAX: {data?.main?.temp_max.toFixed(1)}ºC</span></div>
+    <div>
+      <span>Visibilidade: {data?.main?.visibility}m</span>
+      <span>Umidade: {data?.main?.humidity %</span>
+      <span>Vento: {data?.wind?.speed}m/s</span>
+      <span>Sensação: {data?.main?.feels_like}ºC</span>
+      <span>Pressão: {data?.main?.pressure}hPa</span>
+    </div>
   </div>
 {/if}
 {#if loading}
