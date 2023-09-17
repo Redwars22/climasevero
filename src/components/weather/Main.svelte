@@ -25,16 +25,18 @@
   <h1>{data?.name.toUpperCase()}</h1>
 
   <div class="weather-card">
+    <img src="https://openweathermap.org/img/wn/{data?.weather[0].icon}@2x.png"/>
     <h2>{data?.main?.temp.toFixed(1)}ºC</h2>
+    <span>Sensação: {data?.main?.feels_like}ºC</span>
     <h5>{data?.weather[0]?.description}</h5>
-    <div><span style="color: #0d82d5">MIN: {data?.main?.temp_min.toFixed(1)}ºC</span>
-    <span style="color: #f74528">MAX: {data?.main?.temp_max.toFixed(1)}ºC</span></div>
+    <div><h6 style="color: #0d82d5">MIN: {data?.main?.temp_min.toFixed(1)}ºC</h6>
+    <h6 style="color: #f74528">MAX: {data?.main?.temp_max.toFixed(1)}ºC</h6></div>
     <div>
-      <span>Visibilidade: {data?.main?.visibility}m</span>
-      <span>Umidade: {data?.main?.humidity %</span>
-      <span>Vento: {data?.wind?.speed}m/s</span>
-      <span>Sensação: {data?.main?.feels_like}ºC</span>
-      <span>Pressão: {data?.main?.pressure}hPa</span>
+      <h6>Visibilidade: {data?.visibility}m</h6>
+      <h6>Umidade: {data?.main?.humidity}%</h6>
+      <h6>Vento: {data?.wind?.speed}m/s</h6>
+      <h6>Pressão: {data?.main?.pressure}hPa</h6>
+
     </div>
   </div>
 {/if}
