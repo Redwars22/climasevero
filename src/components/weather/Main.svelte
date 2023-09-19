@@ -16,7 +16,7 @@
   window.onload = () => document.getElementById("search-btn").addEventListener("click", async () => {
     loading = true;
     let query = document.getElementById("search").value;
-    data = await getWeatherData(query, API_KEY);
+    data = await getWeatherData(query, API_KEY, true);
     loading = false;
   })
 </script>
@@ -34,12 +34,15 @@
       min={data?.main?.temp_min.toFixed(1)}
       max={data?.main?.temp_max.toFixed(1)}
     />
-    <div>
-      <h6>Visibilidade: {data?.visibility}m</h6>
-      <h6>Umidade: {data?.main?.humidity}%</h6>
-      <h6>Vento: {data?.wind?.speed}m/s</h6>
-      <h6>Pressão: {data?.main?.pressure}hPa</h6>
-
+    <div class="flex-wrap">
+      <div>
+        <h6><i class="bi bi-cloud-fog2"></i> Visibilidade: {data?.visibility}m</h6>
+        <h6><i class="bi bi-water"></i> Umidade: {data?.main?.humidity}%</h6>
+      </div>
+      <div>
+        <h6><i class="bi bi-wind"></i> Vento: {data?.wind?.speed}m/s</h6>
+        <h6><i class="bi bi-thermometer-low"></i> Pressão: {data?.main?.pressure}hPa</h6>
+      </div>
     </div>
   </div>
 {/if}
@@ -55,6 +58,12 @@
     border-radius: 10px;
     border: 4px solid #1572e540;
     width: 50%;
+  }
+
+  .flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .main-container {
