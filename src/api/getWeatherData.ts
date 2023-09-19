@@ -1,3 +1,5 @@
+import { getWeatherBGFromString } from '../utils/setBG';
+
 export default async function getWeatherData(
   query: string,
   API_KEY: string,
@@ -10,6 +12,8 @@ export default async function getWeatherData(
   const res = await data.text();
 
   if (debug) console.log(JSON.parse(res));
+
+  getWeatherBGFromString(JSON.parse(res)?.weather[0].main);
 
   return JSON.parse(res);
 }
