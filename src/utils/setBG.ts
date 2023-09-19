@@ -22,5 +22,8 @@ export const getWeatherBGFromString = (id: string) => {
     case 'Thunderstorm':
       setBG(2);
       break;
+    case 'Clear':
+      setBG(2);
+      break;
   }
 };
