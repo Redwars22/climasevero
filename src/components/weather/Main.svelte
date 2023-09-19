@@ -57,7 +57,18 @@
     padding: 10px;
     border-radius: 10px;
     border: 4px solid #1572e540;
-    width: 50%;
+    width: 90%;
+    padding-bottom: 2rem;
+  }
+
+  @media screen and (min-width: 900px) {
+    .weather-card {
+      background-color: #002f68;
+      padding: 10px;
+      border-radius: 10px;
+      border: 4px solid #1572e540;
+      width: 50%;
+    }
   }
 
   .flex-wrap {
