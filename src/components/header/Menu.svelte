@@ -1,6 +1,10 @@
-<Script>
+<script>
 function showInfo(){
-  window.alert("");
+  window.open("https://andrewnationdev.vercel.app/docs/projects/climasevero")
+}
+
+function andrewNationWebsite(){
+  window.open("https://andrewnationdev.vercel.app")
 }
 </script>
 
@@ -8,7 +12,7 @@ function showInfo(){
   <div>
     <button on:click={showInfo}>Sobre</button>
     <button disabled>App Mobile</button>
-    <button>Mais Apps</button>
+    <button on:click={andrewNationWebsite}>Mais Apps</button>
   </div>
 </div>
 
