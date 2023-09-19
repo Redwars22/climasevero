@@ -58,7 +58,6 @@
     border-radius: 10px;
     border: 4px solid #1572e540;
     width: 90%;
-    padding-bottom: 2rem;
   }
 
   @media screen and (min-width: 900px) {
@@ -83,5 +82,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 2rem;
   }
 </style>
