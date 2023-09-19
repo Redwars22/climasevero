@@ -20,7 +20,7 @@
   })
 </script>
 
-<div>
+<div class="main-container">
 {#if !loading}
   <h1>{data?.name.toUpperCase()}</h1>
 
@@ -51,5 +51,13 @@
     padding: 10px;
     border-radius: 10px;
     border: 4px solid #1572e540;
+  }
+
+  .main-container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 </style>

@@ -1,10 +1,13 @@
+<script>
+  import SearchBar from './SearchBar.svelte';
+</script>
+
 <header>
   <div class="app-logo">
     <i class="bi bi-cloud-drizzle-fill"></i>
     <h1>CLIMASEVERO</h1>
   </div>
-  <input type="text" placeholder="Digite uma cidade..." id="search">
-  <button id="search-btn">Pesquisar</button>
+  <SearchBar/>
 </header>
 
 <style>
@@ -27,5 +30,16 @@
   .app-logo:hover > h1 {
     text-decoration: underline;
     opacity: 1.0;
+  }
+
+  @media screen and (min-width: 800px) {
+    header {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75vw;
+    }
   }
 </style>

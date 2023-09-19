@@ -9,6 +9,3 @@
   <Header/>
   <Main/>
 </main>
-
-<style>
-</style>
