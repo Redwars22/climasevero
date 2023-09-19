@@ -31,9 +31,9 @@
       temperature={data?.main?.temp.toFixed(1)}
       feels_like={data?.main?.feels_like}
       description={data?.weather[0]?.description}
+      min={data?.main?.temp_min.toFixed(1)}
+      max={data?.main?.temp_max.toFixed(1)}
     />
-    <div><h6 style="color: #0d82d5">MIN: {data?.main?.temp_min.toFixed(1)}ºC</h6>
-    <h6 style="color: #f74528">MAX: {data?.main?.temp_max.toFixed(1)}ºC</h6></div>
     <div>
       <h6>Visibilidade: {data?.visibility}m</h6>
       <h6>Umidade: {data?.main?.humidity}%</h6>
