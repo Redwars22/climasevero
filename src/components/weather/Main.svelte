@@ -1,6 +1,7 @@
 <script lang="ts">
   import getWeatherData from '../../api/getWeatherData.ts';
   import {API_KEY} from '../../api/auth.ts';
+  import Temperature from './Svelte.svelte';
   //import IWeatherData from "../../api/types.ts";
 
   let data;
@@ -25,10 +26,12 @@
   <h1>{data?.name.toUpperCase()}</h1>
 
   <div class="weather-card">
-    <img src="https://openweathermap.org/img/wn/{data?.weather[0].icon}@2x.png"/>
-    <h2>{data?.main?.temp.toFixed(1)}ºC</h2>
-    <span>Sensação: {data?.main?.feels_like}ºC</span>
-    <h5>{data?.weather[0]?.description}</h5>
+    <Temperature 
+      icon={data?.weather[0].icon}
+      temperature={data?.main?.temp.toFixed(1)}
+      feels_like={data?.main?.feels_like}
+      description={{data?.weather[0]?.description}
+    />
     <div><h6 style="color: #0d82d5">MIN: {data?.main?.temp_min.toFixed(1)}ºC</h6>
     <h6 style="color: #f74528">MAX: {data?.main?.temp_max.toFixed(1)}ºC</h6></div>
     <div>
@@ -51,6 +54,7 @@
     padding: 10px;
     border-radius: 10px;
     border: 4px solid #1572e540;
+    width: 50%;
   }
 
   .main-container {
