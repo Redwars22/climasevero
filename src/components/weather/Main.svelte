@@ -1,7 +1,7 @@
 <script lang="ts">
   import getWeatherData from '../../api/getWeatherData.ts';
   import {API_KEY} from '../../api/auth.ts';
-  import Temperature from './Svelte.svelte';
+  import Temperature from './Temperature.svelte';
   //import IWeatherData from "../../api/types.ts";
 
   let data;
@@ -30,7 +30,7 @@
       icon={data?.weather[0].icon}
       temperature={data?.main?.temp.toFixed(1)}
       feels_like={data?.main?.feels_like}
-      description={{data?.weather[0]?.description}
+      description={data?.weather[0]?.description}
     />
     <div><h6 style="color: #0d82d5">MIN: {data?.main?.temp_min.toFixed(1)}ºC</h6>
     <h6 style="color: #f74528">MAX: {data?.main?.temp_max.toFixed(1)}ºC</h6></div>
