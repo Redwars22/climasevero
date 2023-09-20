@@ -11,7 +11,7 @@ function andrewNationWebsite(){
 <div class="flex">
   <div>
     <button on:click={showInfo}>Sobre</button>
-    <button disabled>App Mobile</button>
+    <button class="disabled" disabled>App Mobile</button>
     <button on:click={andrewNationWebsite}>Mais Apps</button>
   </div>
 </div>
