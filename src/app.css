@@ -59,6 +59,7 @@ button {
 
 .button:disabled {
   color: grey;
+  cursor: not-allowed;
 }
 button:hover {
   border-color: #646cff;
