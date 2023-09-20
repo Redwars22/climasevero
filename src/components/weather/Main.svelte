@@ -19,6 +19,7 @@
 
     if(query == "") {
       window.alert("Você precisa informar uma cidade!")
+      loading = false;
       return;
     }
 
