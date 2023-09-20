@@ -16,6 +16,12 @@
   window.onload = () => document.getElementById("search-btn").addEventListener("click", async () => {
     loading = true;
     let query = document.getElementById("search").value;
+
+    if(query == "") {
+      window.alert("Você precisa informar uma cidade!")
+      return;
+    }
+
     data = await getWeatherData(query, API_KEY, true);
     loading = false;
   })
